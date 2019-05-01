@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>SCROLL4SURVIVAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+	 <link rel="stylesheet" href="bootstrap.css">
+
+	</head>
+	<style>
+
+</style>
+<body>
+<div id="main">
+	<div id = "title">SCROLL4SURVIVAL<br><br><div id="butt"><button type="button" class="btn btn-outline-light" onClick="next()">Start</button></div></div>
+	<div id = "title2">BOOO HOOO, YOU COULDN'T KEEP UP?!?<br><br><div id="butt2"><button type="button" class="btn btn-outline-light" onClick="next2()">Restart</button></div></div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div id ="nomnom"><img src="nomnom.gif" alt = "Killin Machine" width="100%"></div>
+	<div id="remover"><br></div><div id="bgfg"></div>
+	<div id="runner"><img src ="runnin3.gif" alt = "Main Character" width = "200px;">
+	
+	</div><div id="counter"></div></div>
+
+
+
+
+
+
+	
+	
+	
+	
+<!--	THIS IS THE SCRIPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT-->
+	<script type="text/javascript" charset="utf-8">
+		var diff = 50;
+		var stage = 1;
+		var counter = 1;
+		var currentOpen = 0;
+		var death = 110;
+		
+if (stage===1){
+	document.getElementById("title").style.display = "block";
+	document.getElementById("title2").style.display = "none";
+document.getElementById("runner").style.display = "none";
+document.getElementById("counter").style.display = "none";
+document.getElementById("nomnom").style.display = "none";
+	
+};
+
+		function next2(){
+			window.location.reload(false); 
+			
+		}
+		
+function next(){
+	stage = 2;
+	console.log(stage);
+
+		
+if (stage === 2){
+document.getElementById("title").style.display = "none";
+document.getElementById("runner").style.display = "block";
+document.getElementById("counter").style.display = "block";
+document.getElementById("nomnom").style.display = "block";
+		
+function countItUp(){
+		 currentOpen = $("div.generated").length;
+//			console.log(currentOpen);
+		
+		};
+function score(){
+	document.getElementById("counter").innerHTML = "Score:"+counter;
+	var bot = death - currentOpen;
+	console.log(bot);
+	document.getElementById("nomnom").style.bottom = bot + "%";
+	
+	if(bot<24){
+		stage = 3;
+		console.log(stage);
+		youDead();
+	};
+};
+		
+
+		
+			
+		function makeDiv(){
+	var w = innerWidth;
+	var random = jsonContent.featured[Math.floor(Math.random() * jsonContent.featured.length)];
+	var random2 = (Math.floor(Math.random() * w)) - 100;
+	
+	
+	
+	if (stage==2){var generate = document.createElement('div');};	
+	
+	generate.className = "generated";
+	generate.id = "generated"+counter;
+	
+	document.getElementById("main").appendChild(generate);
+	document.getElementById("generated"+counter).style.paddingLeft = random2+"px";
+			
+	document.getElementById("generated"+counter).innerHTML = "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"+random;
+	
+	counter++;
+	countItUp();
+	
+			
+			if (stage==2){score();	};	
+		
+	};
+	
+		setInterval(makeDiv,diff);
+
+		
+$(document).scroll(function () {
+var bodyRect = document.body.getBoundingClientRect();
+var elemRect = document.getElementById("remover").getBoundingClientRect();
+var    offset   = elemRect.top - bodyRect.top - window.innerHeight;
+  var p = $( ".generated:first" );
+var position = p.position(); 
+	y = position.top;	
+	
+		
+		if (offset + 280 > y){
+			$(p).fadeOut();
+			$(p).remove();
+		};
+	
+});
+
+};
+};
+
+function youDead(){
+if (stage===3){
+	document.getElementById("title2").style.display = "block";
+document.getElementById("runner").style.display = "none";
+document.getElementById("counter").style.display = "block";
+document.getElementById("nomnom").style.display = "none";
+document.getElementsByClassName("generated").style.display = "none";
+};
+	
+};
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@font-face{
+	
+	font-family: "My Sans";
+	src:url(PressStart2P-Regular.ttf);
+	
+}
+
+#title{
+	position:fixed;
+	z-index:11;
+	font-family: "My Sans";
+	color:#FFFC37;
+	font-size:5vw;
+	top:40%;
+	left:50px;
+	
+}
+
+#title2{
+	position:fixed;
+	z-index:11;
+	font-family: "My Sans";
+	color:#FFFC37;
+	font-size:5vw;
+	top:40%;
+	left:50px;
+	
+}
+#butt{
+	margin-left:60%;
+}
+
+#butt2{
+	margin-left:60%;
+}
+
+#nomnom{
+	position:fixed;
+	width:110%;
+	
+	z-index:11;
+	margin-left:-2px;
+	
+}
+
+#runner{
+	position:fixed;
+	top:60%;
+	left:40%;
+	z-index:10;
+	
+}
+
+#remover{
+	position:fixed;
+	top:10%;
+	width:100%;
+	
+}
+
+#bgfg{
+	position:fixed;
+	top:0%;
+	height:100%;
+	width:100%;
+	background-image: url('bg2.png');
+	background-repeat: repeat;
+	background-position: -5%;
+	z-index:1;  
+}
+
+#counter{
+	position:fixed;
+	font-family: "My Sans";
+	color:#FFFC37;
+	bottom:10%;
+	left:30px;
+	font-size:4vw;
+	z-index:11;
+}
+
+
+.generated{
+	color:white;
+	font-family: "My Sans";
+	position:relative;
+	z-index: 5;
+	font-size:3vw;
+	font-stretch:condensed;
+		
+}
+
+body {
+	width: 100%;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #ffe700, #0E01FF, #4AFFDA);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
